@@ -28,7 +28,7 @@ interface Task {
 }
 
 function App() {
-  const [currentUserId] = useState<number>(1); // Hard-coded user ID as per requirements
+  const [currentUserId, setCurrentUserId] = useState<number>(1); // User ID - can be changed via dropdown
   const [users, setUsers] = useState<User[]>([]);
   const [taskTypes, setTaskTypes] = useState<TaskType[]>([]);
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -140,7 +140,24 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Task Management Platform</h1>
-        <p>Current User: {users.find(u => u.id === currentUserId)?.name || `User ${currentUserId}`}</p>
+        <div className="user-selector">
+          <label htmlFor="user-select">Current User: </label>
+          <select
+            id="user-select"
+            value={currentUserId}
+            onChange={(e) => {
+              setCurrentUserId(Number(e.target.value));
+              loadData();
+            }}
+            className="user-select-dropdown"
+          >
+            {users.map((user) => (
+              <option key={user.id} value={user.id}>
+                {user.name} ({user.email})
+              </option>
+            ))}
+          </select>
+        </div>
       </header>
 
       <div className="container">

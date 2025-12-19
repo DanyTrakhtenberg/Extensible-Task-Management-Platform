@@ -19,6 +19,40 @@
   opacity: 0.9;
 }
 
+.user-selector {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.user-selector label {
+  color: white;
+  font-size: 1rem;
+}
+
+.user-select-dropdown {
+  padding: 8px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  min-width: 250px;
+}
+
+.user-select-dropdown:hover {
+  border-color: #007bff;
+}
+
+.user-select-dropdown:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
