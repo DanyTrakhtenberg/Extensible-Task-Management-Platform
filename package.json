@@ -1,0 +1,17 @@
+{
+  "name": "extensible-task-management-platform",
+  "version": "1.0.0",
+  "description": "Extensible Task Management Platform",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev:backend": "cd backend && npm run start:dev",
+    "dev:frontend": "cd frontend && npm start",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build"
+  }
+}
+
